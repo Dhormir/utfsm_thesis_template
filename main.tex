@@ -1,0 +1,105 @@
+\documentclass[hyperref, masterofscience]{cgvpub}
+% other document types next to bachelorofscience:
+% masterofscience
+% diplominf
+% diplomist
+% beleg
+% researchproject
+
+%more options (to be appended in the square brackets):
+% german....... german version 
+% female........ to be used for female endings in german
+% bibnum....... numerical reference style
+% final............ intended for the final submission
+% lof.............. genereate list of figures
+% lot.............. generate list of tables
+% noproblem.. do not show task
+% notoc......... do not generate table of contents
+% twoside...... two sided layout
+\usepackage[ansinew]{inputenc}
+
+\usepackage{lipsum}
+\usepackage{color}
+\usepackage{tcolorbox}
+\usepackage[toc,page]{appendix}
+\usepackage{float}
+\usepackage{amsmath, nccmath}
+\usepackage{mathtools, cuted}
+\usepackage{amssymb}
+\usepackage{eurosym}
+\usepackage{enumitem}
+\usepackage{dirtytalk}
+
+\definecolor{bluecite}{RGB}{63,41,149}
+
+
+\usepackage[numbers,sort&compress,authoryear]{natbib}
+\usepackage{MnSymbol}
+
+
+
+
+
+
+\author{\vspace{-1.5cm} Author}
+\title{\centering Title \vspace{0.5cm}{\Large by}}
+
+\problem{
+%acknowledgements
+}
+
+\copyrighterklaerung{If the author used resource from third parties (texts, images, code) he or she should state the consents of the copyright owners here or cite the given general conditions (e.g. CC/(L)GPL/BSD copyright notices)}
+
+\abstracten{
+%abstract
+}
+
+%\abstractes{abstract text spanish}
+
+%chapter name in contents
+\usepackage{titletoc}%
+\titlecontents{chapter}% <section-type>
+  [0pt]% <left>
+  {\bfseries}% <above-code>
+  {\textcolor{bluecite}{\chaptername\ \thecontentslabel:\quad}}% <numbered-entry-format>
+  {}% <numberless-entry-format>
+  {\hfill\contentspage}% <filler-page-format>
+%chapter name on each chapter (warnings)
+\usepackage[standardsections]{scrhack}
+\usepackage[raggedright]{titlesec}
+\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+
+
+\AfterPreamble{\hypersetup{
+  pdfauthor={Author},
+  pdftitle={Working title}
+}}
+
+\begin{document}
+\sloppy
+
+\listoftables %\mtcaddchapter
+\listoffigures %\mtcaddchapter
+
+
+\chapter{Introduction}\label{chap:chapter_1}
+\input{Initial_Chapter/Introduction}
+
+%additional chapters
+\chapter{Related Work}\label{chap:chapter_2}
+\input{Initial_Chapter/related_work}
+
+
+
+\chapter{Conclusions \& Future Work}
+\input{Final_Chapter/Conclusions}
+
+\bibliography{biblio}
+
+% \begin{appendices}
+% \chapter{Some Appendix}
+% The contents...
+
+% \end{appendices}
+
+\end{document}
